@@ -1,0 +1,21 @@
+<h1>Podcast Dashboard Page</h1>
+<p>Find me in app/views/podcasts/index.html.erb</p>
+<table border = "1">
+<%= flash[:message] %>
+<%= flash[:message1]%>
+<%= flash[:message2]%>
+<tr>
+
+  <p><h2><a href="/podcasts/trending/<%= @raw_trend.id %>">Trending</a></h2></p>
+  <p><%= @raw_trend.description %>
+</tr>
+<tr>
+  <p><h2><a href="/podcasts/edchoice/<%= @ed_choice.id %>">Editor's Choice</a><h2></p>
+  <p><%= @ed_choice.description %>
+</tr>
+<tr>
+  <p><h2><a href="/podcasts/retro/<%= @retro_pick.id %>">Old is New again</a></h2></p>
+  <p><%= @retro_pick.description %></p>
+  <p><a href="/podcasts">Suggest a Podcast for the show!</a></p>
+<tr>
+</table>

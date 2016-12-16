@@ -1,0 +1,209 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Hind', sans-serif;
+}
+
+
+
+#blackwrapper{
+	margin-bottom: 100px;
+	overflow:auto;
+}
+
+
+#submitwrapper{
+	border-radius: 0px 0px 40px 40px;
+	overflow:auto;
+	
+	padding-bottom: 20%;
+	margin:0px 20px 20px 20px;
+}
+
+
+#feature{
+	
+	background-color:#64b5f6;
+	height: 10%;
+	padding:15px 15px 15px 15px;
+	border-radius: 25px;
+	width:50%;
+	margin-left:25%;
+	margin-top:2%;
+	margin-bottom: 5%;
+}
+
+
+#suggestionform{
+	border-radius: 25px;
+	height: 70%;
+	width:50%;
+	margin:auto;
+	margin-top:10px;
+	padding:35px;
+	margin-left:25%;
+
+
+}
+
+#editme{
+	display:inline-block;
+	vertical-align: top;
+	float:left;
+	margin-right:5px;
+
+}
+#logout{
+	display:inline-block;
+	vertical-align: top;
+}
+/*-----------------------------------Dashboard------------*/
+#blackwrapper2{
+	
+	padding-bottom: 50px;
+	overflow: hidden;
+	position: absolute;
+	width:100%;
+
+	
+
+}
+
+#frosted{
+	position: absolute;
+	vertical-align: middle;
+	text-align: center;
+	filter:blur(5px);
+	overflow: hidden;
+	height: 95%;
+	width:95%;
+
+}
+
+ #dashboardwrapper{
+ 	/*overflow:auto;*/
+ 	height:auto;
+ 	margin:0px 20px 0px 20px;
+ 	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
+
+ 	
+ 	
+ }
+
+ #welcome{
+ 	margin:auto;
+ 	text-align: center;
+ 	padding-top:20px;
+ 	position: relative;
+ 	background-color: rgba(0, 0, 0, 0.6);
+ }
+
+ #welcome h1{
+ 	margin:0px;
+ }
+
+ #welcome p{
+ 	font-size: 1.2em;
+ }
+
+#podcart{
+	text-align:center;
+	display: inline-block;
+	position: relative;
+	width:100%;
+
+}
+
+.pod{
+	
+	height: auto;
+	border-radius: 40px;
+	margin:40px 30px 100px 30px;
+	position: relative;
+}
+
+#popular{
+	border:10px solid #84ffff;
+
+
+}
+
+#editorschoice{
+	border:10px solid #b2ff59;	
+
+}
+
+
+#retro{
+	border:10px solid #ef5350;
+	
+}
+
+/*--------------------------player */
+#blackwrapperplay{
+	
+	padding-bottom: 50px;
+	position: absolute;
+	width:100%;
+	height: auto;
+
+}
+
+
+#dashboardwrapperplay{
+ 	/*overflow:auto;*/
+ 	height:100%;
+ 	margin:0px 20px 0px 20px;
+ 	border-radius: 0px 0px 40px 40px;
+ 	padding-top:20px;
+	z-index:-2;
+
+	/*overflow: hidden;*/
+}
+
+
+#playerbox{
+	margin:2% 0% 5% 25%;
+	background-color:white;
+	width:50%;
+	border-radius: 40px;
+	display: block;
+	vertical-align: top;
+	padding:20px;
+	border:5px solid black;
+	position: relative;
+
+}
+
+#player{
+	width:50%;
+	margin:0 auto;
+
+}
+
+#chatwrap{
+	vertical-align: top;
+	display: block;
+	text-align: center;
+
+}
+
+#chat{
+	display: inline-block;
+	width:80%;
+	margin:10px 10px 20px 10px;
+	position: relative;
+}
+
+#backgroundlogo{
+	width:100%;
+	height: auto;
+	position: absolute;
+	/*overflow:hidden;*/
+	
+
+
+}
+
+

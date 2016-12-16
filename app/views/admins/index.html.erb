@@ -1,0 +1,25 @@
+
+<div class="center-align">
+	<img src="assets/blackfull" alt="logo">
+	<h4>Admin Login</h4>
+</div>
+<div class="container">
+	<form action="/admins" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<% if flash[:error] %>
+  <h3 class=red-text><%= flash[:error] %></h3>
+<% end %>
+	<div class="input-field">
+		<label>Email:</label>
+		<input type="text" name="email" required="">
+	</div>
+	<div class="input-field">
+		<label>Password:</label>
+		<input type="password" name="password" required>
+	</div>
+	<input class="btn deep-purple darken-3" type="submit" value="Login">
+	<a class="btn deep-purple darken-3" href= "/admins/dash">User Login</a>
+
+
+	</form>
+</div>

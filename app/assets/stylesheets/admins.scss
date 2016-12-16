@@ -1,0 +1,52 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Hind', sans-serif;
+}
+
+
+#form{
+	border-radius: 25px;
+	height: auto;
+	width:50%;
+	margin:auto;
+	margin-top:10px;
+	padding:35px;
+	margin-left:25%; 
+
+
+}
+
+#editorslogo{
+	height:65px;
+	width:auto;
+}
+
+#table{
+	align:center;
+	height: auto;
+}
+
+tr{
+	border:solid;
+	border-width:1px 0;
+}
+
+#submit{
+	display: inline;
+}
+#choice{
+	margin-left:15px;
+	display:inline-block;
+	vertical-align: top;
+}
+#database{
+	display: inline-block;
+}
+#tablebutton{
+	display: inline-block;
+	vertical-align: top;
+	margin-left:15px;
+	margin-top:15px;
+
+}

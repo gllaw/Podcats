@@ -1,0 +1,88 @@
+/*<%= stylesheet_link_tag "index" %>*/
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Hind', sans-serif;
+}
+
+
+
+#blackwrappersession{
+	height: 100%;
+	margin:0;
+	top:0;
+	bottom:0;
+	position: absolute;
+	min-width:100%;
+	overflow:hidden; 
+
+}
+
+
+#sessionwrapper{
+	height: 100%;
+	margin: 0px auto;
+	overflow: hidden;
+	border-radius: 40px;
+	/*border: 10px solid black;*/
+}
+
+#discuss{
+	margin:20px;
+	font-size:20pt;
+}
+
+#title{
+	margin:0px;
+	padding:0px;
+}
+#podcasts {
+	position:absolute;
+	
+}
+
+
+
+#podcats{
+	vertical-align: middle;
+	text-align: center;
+}
+#frontpagelogo{
+	width:350px;
+	height: auto;
+	
+}
+#name{
+	width:200px;
+	height: auto;
+}
+
+
+#login{
+	border-radius: 25px;
+	overflow:hidden;
+	width:50%;
+	margin:auto;
+	margin-top:10px;
+	padding:35px;
+	position:absolute;
+	margin-left:25%;
+
+}
+
+#comin{
+	font-style:bold;
+	text-align:center;
+	color: #4527a0;
+}
+body, html{
+	height: 100%;
+}
+
+#register{
+	float:right;
+}
+
+body img{
+	height:75px;
+}

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feature_date: 2016-10-24 16:59:17
+  type_id: 1
+  show: MyString
+  episode: MyText
+  link: MyText
+  description: MyText
+  genre: MyString
+  user_id: 1
+
+two:
+  feature_date: 2016-10-24 16:59:17
+  type_id: 1
+  show: MyString
+  episode: MyText
+  link: MyText
+  description: MyText
+  genre: MyString
+  user_id: 1

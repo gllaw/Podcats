@@ -1,0 +1,21 @@
+<!-- INDIVIDUAL EPISODE PAGE's iframe partial -->
+<!-- <meta http-equiv="refresh" content="3" />  This refreshes the partial every 3 seconds so you can see new comments by others, but is very jarring. Implement Ajax later.-->
+<form action="/comments/create" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="podcast_id" value="<%= @podcast_id %>">
+  <div class="input-field">
+	  <input type="text" name="comment" placeholder="<% if flash[:error] %><%= flash[:error] %><% end %>">
+  </div>
+  <div id="commentbtn">
+ 	 <input  class="btn-large indigo darken-2 z-depth-3" type="submit" value="Comment!">
+ </div>
+</form>
+  <% if @comments %>
+	<% @comments.each do |c|%>
+	  <p><span class="purple-text"><%= c.commenter %></span> <em>says:</em> <%= c.comment %></p>
+	  <% if c.user_id == session[:user_id] %>
+	    <a data-method="delete" href="/comments/<%= c.comment_id %>">Delete</a>
+	  <% end %>
+	<% end %>
+  <% end %>
+

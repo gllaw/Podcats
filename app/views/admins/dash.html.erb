@@ -1,0 +1,68 @@
+<nav class="indigo darken-2">
+	
+	<a class="btn deep-purple darken-3" href="/sessions" data-method="delete">Log Out</a>
+	<a href="#" class="brand-logo center"> <img id="editorslogo" src="/assets/whitefull" alt="cat logo"></a>
+</nav>	
+	<div class="center-align">
+		<h3>Admin Dashboard</h3>
+	</div>
+	
+	<div>
+		<h4 id="submit">Does an editor have a choice podcast to submit?</h4>
+		<a id="choice" class="btn light-blue darken-4" href="/admins/editors_choice">Add A Choice</a>
+	</div>
+
+	<div>
+	<ul class="collapsible" data-collapsible="accordion" id="podtable">
+		<li>
+			<div class="collapsible-header">
+				<h4 id="database">Display podcasts database?</h4>
+				<h6 id="tablebutton" class="btn orange darken-4">Podcast Table</h6>
+			</div>
+				<div class="collapsible-body">
+					<h3>Podcast Table</h3>
+					<table id="table" class="striped highlight">
+						</thead>
+							<tr>
+								<th>Feature date</th>
+								<th>Type id</th>
+								<th>Show</th>
+								<th>Episode</th>
+								<th>Link</th>
+								<th>Description</th>
+								<th>Genre</th>
+								<th>Created at</th>
+								<th>Updated at</th>
+							</tr>
+						</thead>
+				</div>
+			</div>
+		</li>
+			<tbody >
+		<% @podcast.each do |p| %>
+			<tr>
+				<td><%=p.feature_date %></td>
+				<% if p.type_id == 1%>
+					<% x = "Trending Choice"%>
+					<%end%>
+				<% if p.type_id == 2%>
+					<% x = "Editors Choice"%>
+					<%end%>
+				<% if p.type_id == 3%>
+					<% x = "User's Choice"%>
+					<%end%>
+				<td><%= x %></td>
+				<td><%=p.show %></td>
+				<td><%=p.episode %></td>
+				<td><%=p.link %></td>
+				<td><%=p.description %></td>
+				<td><%=p.genre %></td>
+				<td><%=p.created_at %></td>
+				<td><%=p.updated_at %></td>
+			</tr>
+		<%end%>
+		</tbody>
+		</table>
+	</ul>
+	</div>
+

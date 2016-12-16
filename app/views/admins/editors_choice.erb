@@ -1,0 +1,32 @@
+<nav class="indigo darken-2">
+	<a class="btn btn deep-purple darken-3" href="/admins/dash">Back</a>
+	<a href="#" class="brand-logo center"> <img id="editorslogo" src="/assets/whitefull" alt="cat logo"></a>
+
+</nav>
+
+<h1 class="center-align">Welcome <%= @admin.first_name %></h1>
+<h3 class="center-align">Would you like to submit an editors choice?</h3>
+
+	<div id="form" class="col s12 m2 amber lighten-1 z-depth-4">
+			<form method="post" action="create">
+					<input type="hidden" name="authenticity_token" value ="<%= form_authenticity_token %>">
+					<input type="hidden" name="type_id" value="2">
+				<div class="input-field">
+					<label>Name of the Podcast</label><input type="text" name="show">
+				</div>
+				<div class="input-field">
+					<label>Title/Episode number</label><input type="text" name="episode">
+				</div>
+				<div class="input-field">
+					<label>Link to the episode</label><input type="text" name="link">
+				</div>
+				<div class="input-field">
+					<label>Episode description/Why did you pick this episode?</label><textarea class="materialize-textarea" type="text" name="description"></textarea>
+				</div>
+				<div class="input-field">
+					<label>What genre would you call this show?</label><input type="text" name="genre">
+					<!-- Should we make this a dropdown select? -->
+				</div>
+					<input class="btn deep-purple darken-3" type="submit" value="Submit!">
+			</form>
+	</div>

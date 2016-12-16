@@ -1,0 +1,89 @@
+<% if session[:user_id] %>
+	<div>
+		<nav id="nav" class="indigo darken-2">
+			<a class="btn deep-purple darken-3 z-depth-3" href="/sessions" data-method="delete">Log Out</a>
+		  	<% if !current_page?("/users/#{session[:user_id]}/edit") %>
+		    	<a class="btn deep-purple darken-3 z-depth-3" href="/users/<%= session[:user_id] %>/edit">Edit Profile</a>
+		  		<% end %>
+			<% end %>
+			<!-- <a class="btn deep-purple darken-3 z-depth-3" href="javascript:history.back()">Back</a> -->
+			<a href="#" class="brand-logo center"> <img id="editorslogo" src="/assets/whitefull" alt="cat logo"></a>
+		</nav>
+	</div>
+
+	<div id="blackwrapper2" class="black">
+		<div id="dashboardwrapper" class="teal lighten-1">
+			<% if flash[:error] %> 			<!--It redirects here to flash error if they tried to do something with the wrong user_id-->
+			  <%= flash[:error] %>
+			  <% end %>
+
+			<div id="frosted">
+				<% for i in 1..300 %>
+				<% if i < 300 %>
+				<%	x =rand(1..40) %>
+					<img src="/assets/podcasts/<%=x%>">
+				<%end%>
+			<%end%>
+
+
+
+			
+			</div>
+
+
+			<div id="welcome">
+				<div>
+					<h1 class="orange-text">This week, on Podcats...</h1>
+					<p class="orange-text">Every Friday, we feature three podcasts. Listen, enjoy, and see what the rest of the Podcats have to say about it!</p>
+					<% if flash[:success]%>
+						  <p class="white-text"><%= flash[:success]%></p>
+						<% end %>
+				</div>
+			</div>
+
+			<div id="podcart">
+
+			<!-- __________________________________ podcast #1-->
+
+				<div id="popular" class="pod black z-depth-5 white-text">
+				
+
+						
+						<h2>Popular Choice!</h2>
+						<h5>This week, <%= @raw_trend.show %> was chosen based on what is trending online right now on the podcast charts!</h5>
+						<!-- <h5>This weeks episodeTrending</a></h5> -->
+						<p><%= @raw_trend.description %></p>
+						<a class="btn" href="/podcasts/trending/<%= @raw_trend.id %>">Listen Now!</a>
+						
+						 
+
+				</div>
+
+			<!-- _________________________ podcast #2-->
+
+				<div id="editorschoice" class="pod white-text black z-depth-5">
+
+						
+						<h2>Editors Choice!</h2>
+						<h5>This week, <%= @ed_choice.show %>, was chosen by one of our very own editors, for your listening pleasure!</h5>
+						<p><%= @ed_choice.description %></p>
+						<a class="btn" href="/podcasts/edchoice/<%= @ed_choice.id %>">Listen Now!</a>
+						
+						 
+
+				</div>
+
+			<!-- ________________________ Podcast #3-->
+				<div id="retro" class="pod black white-text z-depth-5">
+
+						
+					<a class="btn white black-text" href="/podcasts">Suggest a Podcast for the category!</a>
+					<h2>User's Choice!</h2>
+					<h5>This week's show, <%= @retro_pick.show %>, was randomly selected from our users' submissions. Submit a past podcast using the link below.</h5>
+					<p><%= @retro_pick.description %></p>
+				
+					<a class="btn" href="/podcasts/retro/<%= @retro_pick.id %>">Listen Now!</a>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,26 @@
+<h1>Podcasts#show</h1>
+<p>Find me in app/views/podcasts/show.html.erb</p>
+
+<% if @podcast_all.type_id == 1 %>
+  <p>This is Trending this week</p>
+<% elsif @podcast_all.type_id == 2 %>
+  <p>Editor's Pick of the Week </p>
+<% else %>
+  <p> This is our retro pick is from: <%= @podcast_all.show %></p>  
+<% end %>
+
+<% if @podcast_all.link =~ /this-american-life/ %>
+
+  <script src="http://audio.thisamericanlife.org/widget/widget.min.js" type="text/javascript"></script>
+  <div id="<%= @podcast_all.link %>" class="this-american-life" style="width:540px;"></div>
+
+<% elsif  @podcast_all.link =~ /radiolab/ %>
+
+  <iframe frameborder='0' height='180' src="http://www.radiolab.org/widgets/bucket_player/#slotname=radiolab-bucket-player-episodes" mce_src="http://www.radiolab.org/widgets/bucket_player/#slotname=radiolab-bucket-player-episodes" width='300px'></iframe>
+
+<% else %>
+
+    <iframe width="75%" height="450" scrolling="no" frameborder="no" src="<%= @podcast_all.link %>"></iframe>
+
+<% end %>
+

@@ -1,0 +1,61 @@
+<!-- LOGIN PAGE -->
+
+
+<body>
+
+	<div id="blackwrappersession" class="black">
+		<div id="sessionwrapper" class="teal lighten-1">
+			<nav class="indigo darken-2">
+			<a id="Admin" class="btn deep-purple darken-3" href="/admins">Admin Login</a>
+
+			
+				<!-- <h1 id="title" class="center-align">PodCats</h1> -->
+			</nav>
+			
+
+		
+			<!-- <h2 id="comein">Come on in!</h2> -->
+			<% if flash[:error] %>
+			  <h3 class="red center-align"><%= flash[:error] %></h3>
+			<% end %>
+
+			<div id="podcasts" class="center-align">
+				<% for i in 1..300 %>
+				<% if i < 300 %>
+				<%	x =rand(1..40) %>
+					<img src="/assets/podcasts/<%=x%>">
+				<%end%>
+			<%end%>
+	 		</div>
+
+			<div id="login" class="col s12 m2 amber lighten-1 z-depth-4">
+					<!-- <h3 class="center-align">PodCats</h3> -->
+					<div id="podcats">
+						<img id="frontpagelogo" class="label" src="/assets/blackfull" alt="Podcats">
+					</div>
+					<p id="discuss" class="center-align">With so many great podcasts out there, it can be hard to choose. So why not let us choose for you!</p>
+				<div class="container" >
+					<form action="/sessions" method="post">
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					<div class="input-field">
+						<label>Email:</label>
+						<input id="Email" type="text" name="user[email]">
+					</div>
+					<div class="input-field">
+						<label>Password:</label>
+						<input id="Password" type="password" name="user[password]">
+					</div>
+						<input type="submit" value="Login" class="btn deep-purple darken-3">
+					<a id="register" class="btn deep-purple darken-3" href="/users">Register Here!</a>
+					
+
+					</form>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+</body>
+

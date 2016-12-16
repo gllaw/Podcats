@@ -1,0 +1,47 @@
+<!-- EDIT USER INFO -->
+
+<% if session[:user_id] %>
+  <div>
+    <nav id="nav" class="indigo darken-2">
+      <a class="btn deep-purple darken-3 z-depth-3" href="/sessions" data-method="delete">Log Out</a>
+        <% if !current_page?("/users/#{session[:user_id]}/edit") %>
+          <a class="btn deep-purple darken-3 z-depth-3" href="/users/<%= session[:user_id] %>/edit">Edit Me</a>
+          <% end %>
+      <% end %>
+      <a class="btn deep-purple darken-3 z-depth-3" href="javascript:history.back()">Back</a>
+      <a href="#" class="brand-logo center"> <img id="editorslogo" src="/assets/whitefull" alt="cat logo"></a>
+    </nav>
+  </div>
+
+
+<% if flash[:errors] %>                   <!--validation errors-->
+  <% flash[:errors].each do |e| %>
+	<p><%= e %></p>
+  <% end %>		
+<% end %>
+
+<% if flash[:error] %>                    <!--Wrong user_id error-->
+  <%= flash[:error] %>
+<% end %>
+
+  <div id="editform" class="col s12 m2 amber lighten-1 z-depth-4">
+    <h1>Edit Me</h1>
+      <form action="/users/<%= @user.id %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="patch">
+      <label>First Name</label>
+      <input type="text" name="user[first_name]" value="<%= @user.first_name %>">
+      <label>Last Name</label> 
+      <input type="text" name="user[last_name]" value="<%= @user.last_name %>">
+      <label>User Name</label> 
+      <input type="text" name="user[user_name]" value="<%= @user.user_name %>">
+      <label>Email</label> 
+      <input id="Email" type="text" name="user[email]" value="<%= @user.email %>">
+      <label>Age</label> 
+      <input type="text" name="user[age]" value="<%= @user.age %>">
+      <label>Password</label>
+      <input type="password" name="user[password]" value="<%= @user.password %>">
+      <input class="btn deep-purple darken-3" type="submit" value="Update"> 
+    </form>
+    
+<a data-method="delete" href="/users/<%= @user.id %>">Delete Account</a>

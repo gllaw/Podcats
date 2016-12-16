@@ -1,0 +1,53 @@
+<!-- REGISTER PAGE -->
+<nav class="indigo darken-2">
+	<a class="btn deep-purple darken-3 z-depth-3" href="/admins/dash">Back</a>
+	<a href="#" class="brand-logo center"> <img id="editorslogo" src="/assets/whitefull" alt="cat logo"></a>
+</nav>
+<div id="newwrapper" class="teal lighten-1">
+
+	<% if flash[:errors] %>
+	  <% flash[:errors].each do |e| %>
+	    <p><%= e %></p>
+		<% end %>		
+	<% end %>
+
+	<div id="editform" class="container col s12 m2 amber lighten-1 z-depth-4">
+	<h1 id="join" class="center-align">Join the Conversation!</h1>
+
+		<form action="/users" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div class="input-field">
+				<label>First Name</label>
+				<input type="text" name="user[first_name]">
+			</div>
+			<div class ="input-field">
+				<label>Last Name</label>
+				<input type="text" name="user[last_name]">
+			</div>
+			<div class ="input-field">
+				<label>User Name</label>
+				<input type="text" name="user[user_name]">
+			</div>
+			<div class ="input-field">
+				<label>Email</label>
+				<input type="text" name="user[email]">
+			</div>
+			<div class ="input-field">
+				<label>Age</label>
+				<input type="text" name="user[age]">
+			</div>
+			<div class ="input-field">
+				<label>Password</label>
+				<input type="password" name="user[password]">
+			</div>
+			<div class ="input-field">
+				<label>Confirm password</label>
+				<input type="password" name="user[password_confirmation]">
+			</div>
+			<div class ="input-field">
+			<input class="btn deep-purple darken-3" type="submit" value="Register">
+		</form>
+	</div>
+</div>
+	<!-- <h5 >Already a podcat person?</h5> <a class="btn" href="/sessions">Click here to log in instead</a> -->
+	
